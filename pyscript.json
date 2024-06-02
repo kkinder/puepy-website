@@ -1,0 +1,7 @@
+{
+  "name": "PuePy Tutorial",
+  "debug": true,
+  "files": {
+    "./puepy-bundle.zip": "./*"
+  }
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PuePy - Python Frontend Framework</title>
+  <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://pyscript.net/releases/2024.5.2/core.css">
+  <script type="module" src="https://pyscript.net/releases/2024.5.2/core.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
+  <link rel="stylesheet" href="./home.css">
+
+</head>
+<body>
+<section class="hero is-medium is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column is-full-mobile is-half-tablet is-half-desktop">
+          <h1 class="title hero-text">
+            Welcome to PuePy!
+          </h1>
+          <h2 class="subtitle hero-text">
+            A pure Python frontend web framework with reactivity, routing, and all the batteries of Python!
+            See those plus/minus buttons right there? Those are running Python code, right in your browser. No
+            transpiling, no build step, no funny business.
+          </h2>
+        </div>
+        <div class="column is-full-mobile is-half-tablet is-half-desktop hero-image">
+          <div id="app" class="box"></div>
+          <script type="mpy" src="./counter.py" config="./pyscript.json"></script>
+          <pre class="box" style="background: #f3f3f3"><code class="language-python">class CounterPage(Page):
+    def initial(self):
+        return {"current_value": 0}
+
+    def populate(self):
+        with t.div(classes="inc-box"):
+            t.button("-", on_click=self.on_decr)
+            t.span(str(self.state["current_value"]))
+            t.button("+", on_click=self.on_incr)
+
+    def on_decr(self, event):
+        self.state["current_value"] -= 1
+
+    def on_incr(self, event):
+        self.state["current_value"] += 1</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-multiline is-flex is-align-items-stretch">
+      <div class="column is-full-mobile is-half-tablet is-half-desktop">
+        <div class="box">
+          <h3 class="title is-4">Why PuePy? 🐍</h3>
+          <div class="content">
+            <p>PuePy is a lightweight web framework that uses Webassembly via <a href="http://pyscript.net">PyScript</a>
+              to put Python right in your browser with all the modern conveniences of a web framework, but none of the
+              headaches of Webpack, NPM, or even JavaScript.</p>
+          </div>
+        </div>
+      </div>
+      <div class="column is-full-mobile is-half-tablet is-half-desktop">
+        <div class="box">
+          <h3 class="title is-4">Features 🧑‍💻</h3>
+          <div class="content">
+            <ul>
+              <li>Reactive data binding</li>
+              <li>Component-based architecture</li>
+              <li>No build layer: direct execution like other Python projects</li>
+              <li>Choice of full CPython/<a href="https://pyodide.org/en/stable/">Pyodide</a> or <a
+                href="https://micropython.org">Micropython</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="column is-full-mobile is-half-tablet is-half-desktop">
+        <div class="box">
+          <h3 class="title is-4">Why <em>not</em> PuePy? 🙅</h3>
+          <div class="content">
+            <p>Not all sites need "web frameworks." Does yours? And if it does, will you miss in-browser debuggers,
+              mature JavaScript tooling, and the vast communities around frameworks like React or Vue? You might.</p>
+          </div>
+        </div>
+      </div>
+      <div class="column is-full-mobile is-half-tablet is-half-desktop">
+        <div class="box">
+          <h3 class="title is-4">Experiment 🧪</h3>
+          <div class="content">
+            <p>Try using <a href="https://pyscript.com/">PyScript.com</a> to quickly clone, run, and modify PuePy
+              examples. No download necessary.</p>
+            <a class="button is-info" href="https://pyscript.com/@kkinder/puepy-tutorial/latest">Examples from
+              Tutorial</a>
+          </div>
+        </div>
+      </div>
+      <div class="column is-full-mobile is-half-tablet is-half-desktop">
+        <div class="box">
+          <h3 class="title is-4">RTFM 📚</h3>
+          <div class="content">
+            <p>Ready to dive in? Check out our <a href="https://docs.puepy.com/">tutorial</a> and see how easy it is to
+              build your first project with PuePy.</p>
+            <a class="button is-link" href="https://docs.puepy.com/">Documentation</a>
+          </div>
+        </div>
+      </div>
+      <div class="column is-full-mobile is-half-tablet is-half-desktop">
+        <div class="box">
+          <h3 class="title is-4">Participate 🖖</h3>
+          <div class="content">
+            <p>You are not the only one looking for a Pure Python development stack. There <em>might be</em> dozens
+              of us!</p>
+            <a class="button is-link" href="https://github.com/kkinder/puepy">PuePy on GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>PuePy</strong>. A web framework for an enlightened age.
+    </p>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script>hljs.highlightAll()</script>
+</body>
+</html>
